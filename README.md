@@ -1,19 +1,16 @@
 #### Issue: select stanza interacts with package specification
 
-When I uncomment package from dune-project
+When I replace dune's version from 3.22 to 3.23 I get a compilation error.
+I don't know why.
 
 ```
-(package
- (name test_select))
+Error: Dependency cycle between:
+   %{read:../lt38.txt} at lib/dune:16
+Had 1 error, waiting for filesystem changes...
 ```
 
-I start getting compilation error:
+The whole setup is kind of fragile. When I was using dune 3.22 adding `(name ...` and `(package ...)` was breaking everything.
 
-```
-Error: Trying to build _build/lt38.txt but build context lt38.txt doesn't
-exist.
--> required by %{read:../lt38.txt} at lib/dune:16
-```
 
 ### Wanted: select implementation based on ppxlib's version
 
