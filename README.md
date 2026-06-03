@@ -1,5 +1,7 @@
 #### Issue: select stanza interacts with package specification
 
+Tested with dune 3.23.1
+
 When I replace dune's version from 3.22 to 3.23 I get a compilation error.
 I don't know why.
 
