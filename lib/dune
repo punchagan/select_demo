@@ -22,3 +22,6 @@
  (enabled_if
   (and %{read:../ge38.txt}))
  (libraries))
+
+(cram
+ (deps ./test_select.exe))
