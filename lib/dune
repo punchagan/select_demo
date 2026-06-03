@@ -1,0 +1,24 @@
+(executable
+ (name test_select)
+ (modules test_select)
+ ;  (public_name test_select)
+ (libraries
+  (select
+   test_select.ml
+   from
+   (fake_lt38 -> test_select.lt38.ml)
+   (fake_ge38 -> test_select.ge38.ml))))
+
+(library
+ (name fake_lt38)
+ (modules fake_lt38)
+ (enabled_if
+  (and %{read:../lt38.txt}))
+ (libraries))
+
+(library
+ (name fake_ge38)
+ (modules fake_ge38)
+ (enabled_if
+  (and %{read:../ge38.txt}))
+ (libraries))
