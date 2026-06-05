@@ -2,7 +2,7 @@
 
 (generate_opam_files true)
 
-; (name test_select)
-
-; (package
-;  (name test_select))
+(package
+ (name test_select)
+ (allow_empty)
+ (depends opam-core ppxlib dune-build-info))
