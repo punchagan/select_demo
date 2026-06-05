@@ -13,21 +13,22 @@
  (name fake_lt38)
  (modules fake_lt38)
  (enabled_if
-  (and %{read:lt38.txt}))
+  (and %{read:./config/lt38.txt}))
  (libraries))
 
 (library
  (name fake_ge38)
  (modules fake_ge38)
  (enabled_if
-  (and %{read:ge38.txt}))
+  (and %{read:./config/ge38.txt}))
  (libraries))
 
 (cram
  (deps ./test_select.exe))
 
-(rule
- (targets lt38.txt ge38.txt)
- (deps ../bin/version_check.exe)
- (action
-  (run ../bin/version_check.exe)))
+(subdir config
+  (rule
+   (targets lt38.txt ge38.txt)
+   (deps ../../bin/version_check.exe)
+   (action
+    (run ../../bin/version_check.exe))))
