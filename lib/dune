@@ -1,7 +1,20 @@
-(executable
+;; gives an error
+
+;File "lib/dune", lines 19-23, characters 2-112:
+; 6 |   (select
+; 7 |    test_select.ml
+; 8 |    from
+; 9 |    (fake_lt38 -> test_select.lt38.ml)
+;10 |    (fake_ge38 -> test_select.ge38.ml))))
+;Error: No solution found for this select form.
+
+; Changing library -> executable helps
+; Deleting public_name helps
+
+(library
  (name test_select)
+ (public_name test_select)
  (modules test_select)
- ;  (public_name test_select)
  (libraries
   (select
    test_select.ml
