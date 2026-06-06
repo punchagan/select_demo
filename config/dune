@@ -1,0 +1,5 @@
+(rule
+ (targets lt38.txt ge38.txt)
+ (deps ../bin/version_check.exe)
+ (action
+  (run ../bin/version_check.exe)))
