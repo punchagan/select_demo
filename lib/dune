@@ -23,6 +23,7 @@
    (fake_ge38 -> test_select.ge38.ml))))
 
 (library
+ (package test_select)
  (name fake_lt38)
  (modules fake_lt38)
  (enabled_if
@@ -30,6 +31,7 @@
  (libraries))
 
 (library
+ (package test_select)
  (name fake_ge38)
  (modules fake_ge38)
  (enabled_if
